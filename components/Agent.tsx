@@ -118,12 +118,16 @@ const Agent = ({
     setCallStatus(CallStatus.CONNECTING);
 
     if (type === "generate") {
-      await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
-        variableValues: {
-          username: userName,
-          userid: userId,
-        },
-      });
+      await vapi.start(
+          undefined, // assistant config
+          {
+            variableValues: {
+              username: userName,
+              userid: userId,
+            },
+          }, // assistant overrides
+          process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID! // workflow ID
+      );
     } else {
       let formattedQuestions = "";
       if (questions) {
