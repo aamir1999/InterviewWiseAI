@@ -10,8 +10,8 @@ const monaSans = Mona_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "InterviewPrepWiseAI",
-  description: "An AI-powered platform for preparing for mock interviews",
+  title: "InterGenixAI",
+  description: "An AI-powered platform for mock interview preparation, personalized to your job role and experience",
 };
 
 export default function RootLayout({
