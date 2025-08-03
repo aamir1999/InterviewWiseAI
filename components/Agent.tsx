@@ -119,14 +119,16 @@ const Agent = ({
 
     if (type === "generate") {
       await vapi.start(
-          undefined, // assistant config
+          undefined,
+          undefined,
+          undefined,
+          process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!,
           {
             variableValues: {
               username: userName,
               userid: userId,
             },
-          }, // assistant overrides
-          process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID! // workflow ID
+          }
       );
     } else {
       let formattedQuestions = "";
